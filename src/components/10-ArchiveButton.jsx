@@ -1,7 +1,7 @@
 import React from "react";
 
-function ArchieveButton({id, onArchieve}) {
-    return <button className="note-item__archieve-button">Archieve</button>
+function ArchiveButton({id, onArchieve}) {
+    return <button className="note-item__archive-button">Arsipkan</button>
 }
 
-export default ArchieveButton
+export default ArchiveButton

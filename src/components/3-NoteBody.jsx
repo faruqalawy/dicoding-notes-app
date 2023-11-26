@@ -30,8 +30,8 @@ class NoteBody extends React.Component {
                         id: +new Date(),
                         title,
                         body,
-                        archived: false,
                         createdAt: new Date().toISOString(),
+                        archived: false,
                     }
                 ]
             }
