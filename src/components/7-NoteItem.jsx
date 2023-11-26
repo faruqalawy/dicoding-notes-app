@@ -1,12 +1,15 @@
 import React from "react";
 import ActionButton from "./8-ActionButton";
+import { showFormattedDate } from "../utils";
 
 function NoteItem({id, title, body, createdAt, onDelete, onArchieve}) {
     return (
         <div className="note-item">
-            <h1 className="note-item__title" title={title} />
-            <p className="note-item__date" createdAt={createdAt} />
-            <p className="note-item__content" body={body} />
+            <div className="note-item__content">
+                <h3 className="note-item__title">{title}</h3>
+                <p className="note-item__date">{showFormattedDate(createdAt)}</p>
+                <p className="note-item__body">{body}</p>
+            </div>
             <ActionButton id={id} onArchieve={onArchieve} onDelete={onDelete} />
         </div>
     )
