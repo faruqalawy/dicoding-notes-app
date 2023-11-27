@@ -1,16 +1,16 @@
 import React from "react";
 import NoteItem from "./7-NoteItem"
 
-function NoteListActive({id, notes, onDelete, onArchieve}) {
+function NoteListActive({notes, onDelete, onArchive}) {
     return (
         <div className="notes-list">
             {
                 notes.map((note) => (
                     <NoteItem
                         key={note.id}
-                        id={id}
-                        onArchieve={onArchieve}
+                        id={note.id}
                         onDelete={onDelete}
+                        onArchive={onArchive}
                     {...note} />
                 ))
             }
