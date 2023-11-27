@@ -4,15 +4,17 @@ import NoteItem from "./7-NoteItem";
 
 function NoteListArchive({ archivedNotes, onUnarchive, onDelete }) {
     return (
-        <div className="notes-list">
+        <>
             {archivedNotes.length > 0 ? (
-            archivedNotes.map((note) => (
-                <NoteItem key={note.id} onUnarchive={onUnarchive} onDelete={onDelete} {...note} />
-            ))
+                <div className="notes-list">
+                    {archivedNotes.map((note) => (
+                        <NoteItem key={note.id} onUnarchive={onUnarchive} onDelete={onDelete} {...note} />
+                    ))}
+                </div>
             ) : (
-                <p className="note-list__empty-message">Tidak ada catatan</p>
+                <p className="notes-list__empty-message">Tidak ada catatan</p>
             )}
-        </div>
+        </>
     );
 }
 
