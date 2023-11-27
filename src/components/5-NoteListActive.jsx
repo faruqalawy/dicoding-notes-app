@@ -6,16 +6,16 @@ function NoteListActive({ notes, onDelete, onArchive }) {
     return (
         <>
             {activeNotes.length > 0 ? (
-                <div className="notes-list">
-                    {activeNotes.map((note) => (
-                    <NoteItem
-                    key={note.id}
-                    id={note.id}
-                    onDelete={onDelete}
-                    onArchive={onArchive}
-                    {...note}
-                /> ))}
-                </div>
+                    <div className="notes-list">
+                        {activeNotes.map((note) => (
+                        <NoteItem
+                        key={note.id}
+                        id={note.id}
+                        onDelete={onDelete}
+                        onArchive={onArchive}
+                        {...note}
+                    /> ))}
+                    </div>
             ) : (
                 <p className="notes-list__empty-message">Tidak ada catatan</p>
             )}

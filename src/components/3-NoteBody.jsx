@@ -36,8 +36,15 @@ class NoteBody extends React.Component {
     }
 
     onDeleteHandler(id) {
-        const notes = this.state.notes.filter(note => note.id !== id);
-        this.setState({notes});
+        this.setState((prevState) => {
+            const updatedNotes = prevState.notes.filter((note) => note.id !== id);
+            const updatedArchivedNotes = prevState.archivedNotes.filter((note) => note.id !== id);
+    
+            return {
+                notes: updatedNotes,
+                archivedNotes: updatedArchivedNotes,
+            };
+        });
     }
 
     onArchiveHandler(id) {

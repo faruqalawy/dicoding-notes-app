@@ -8,7 +8,12 @@ function NoteListArchive({ archivedNotes, onUnarchive, onDelete }) {
             {archivedNotes.length > 0 ? (
                 <div className="notes-list">
                     {archivedNotes.map((note) => (
-                        <NoteItem key={note.id} onUnarchive={onUnarchive} onDelete={onDelete} {...note} />
+                        <NoteItem
+                            key={note.id}
+                            onUnarchive={onUnarchive}
+                            onDelete={onDelete}
+                            {...note}
+                        />
                     ))}
                 </div>
             ) : (
